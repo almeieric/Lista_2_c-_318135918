@@ -4,19 +4,21 @@ namespace Exercicio_6
 {
     class Program
     {
-        static bool primo(int c)
+        static public bool primo(int n)
         {
-            if ((c % 2 != 0 && c / 2 < 2) || (c % 3 != 0 && c / 3 < 3) || (c % 5 != 0 && c / 5 < 5) || (c % 7 != 0 && c / 7 < 7) || ( c % 11 != 0 && c/ 11 < 11))
-            {
-                return true;
 
-            }
-            else
+            for (int i = 2; i < n; i++)
             {
-                return false;
+                if (n % i == 0)
+                    return false;
             }
+            return true;
         }
-
+        
+        
+            
+               
+          
 
 
 
@@ -24,12 +26,20 @@ namespace Exercicio_6
         {
 
             Console.WriteLine("é Primo?\n");
-            int n = 1;
-            do
+            Console.WriteLine("Insira um numero");
+            int n = Int32.Parse(Console.ReadLine());
+
+
+            if(primo(n) == true)
             {
-                Console.WriteLine(n + " é " + primo(n));
-                n++;
-            } while (n <= 500);
+                Console.WriteLine("O número: " + n + " é um número primo");
+            }
+            else
+            {
+                Console.WriteLine("O número: " + n + " não é um número primo");
+            }
+           
+            
 
 
 
